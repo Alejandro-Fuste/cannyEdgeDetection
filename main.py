@@ -6,4 +6,3 @@ I = read_grayscale_image(image_path)
 
 print(I)
 
-
