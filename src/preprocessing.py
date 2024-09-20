@@ -15,9 +15,22 @@ def create_gaussian_kernel(size, sigma):
         row = []
         for j in range(-offset, offset + 1):
           # Calculate the 2D Gaussian value (since this is a 2D kernel)
-          g_value = gaussian_function(i, sigma) * gaussian_function(j, sigma)
-          row.append(g_value)
-          kernel_sum += g_value
+          value = gaussian_function(i, sigma) * gaussian_function(j, sigma)
+          row.append(value)
+          kernel_sum += value
         kernel.append(row)
 
-   
+   # normalize kernel
+    for i in range(size):
+        for j in range(size):
+            kernel[i][j] /= kernel_sum
+
+    return kernel
+
+size = 3
+sigma = 1
+gaussian_kernel = create_gaussian_kernel(size, sigma)
+
+# Print the kernel
+for row in gaussian_kernel:
+    print(row)
