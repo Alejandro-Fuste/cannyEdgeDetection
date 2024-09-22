@@ -1,4 +1,5 @@
 import math
+from src.gaussian_function import gaussian_function
 
 # Define the 1D Gaussian function
 def gaussian_function(x, sigma):
