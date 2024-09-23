@@ -1,4 +1,5 @@
 import numpy as np
+import cv2
 
 
 def compute_gradient_magnitude(x_image, y_image, sigma):

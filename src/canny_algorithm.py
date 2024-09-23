@@ -14,4 +14,3 @@ def canny_edge_detector(image):
 
     # Compute magnitude
     magnitude = compute_gradient_magnitude(x_derivative_image, y_derivative_image, 1.5)
-    

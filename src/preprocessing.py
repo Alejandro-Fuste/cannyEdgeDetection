@@ -4,6 +4,8 @@ from src.derivative_gaussian_kernel import generate_derivative_gaussian_kernel
 from src.convolution import convolve_image_with_kernel
 from src.magnitude import compute_gradient_magnitude
 from src.utils.plot_results import display_matrix
+import cv2
+import numpy as np
 
 golfer_image = "../data/images/golfer_grayscale.jpg"
 bear_image = "../data/images/bear_grayscale.jpg"
@@ -34,3 +36,7 @@ magnitude = compute_gradient_magnitude(x_derivative_image, y_derivative_image, 1
 # display_matrix(x_derivative_image)
 # display_matrix(y_derivative_image)
 display_matrix(magnitude)
+
+# cv2.imshow('Gradient Magnitude', magnitude / np.max(magnitude))  # Normalize for display
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
