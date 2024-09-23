@@ -16,7 +16,7 @@ def convert_image_to_numpy_array(image_path):
 
 
 # test with golfer image
-input_image_path = '../../data/images/golfer_grayscale.jpg'  # Replace with your JPEG file path
-grayscale_image = convert_image_to_numpy_array(input_image_path)
-print(grayscale_image.shape)  # Should print (H, W, 1)
-print(grayscale_image)
+# input_image_path = '../../data/images/golfer_grayscale.jpg'  # Replace with your JPEG file path
+# grayscale_image = convert_image_to_numpy_array(input_image_path)
+# print(grayscale_image.shape)  # Should print (H, W, 1)
+# print(grayscale_image)
