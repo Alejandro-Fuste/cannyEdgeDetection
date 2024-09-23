@@ -21,7 +21,7 @@ def read_grayscale_image(image_path):
 '''
 
 # path to golfer grayscale image
-image_path = "../../data/images/golfer_grayscale.jpg"
+image_path = "../../data2/images/golfer_grayscale.jpg"
 
 # function call creates matrix
 matrix = read_grayscale_image(image_path)

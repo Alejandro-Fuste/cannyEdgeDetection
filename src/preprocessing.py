@@ -1,17 +1,12 @@
+from src.gaussian_kernel import create_gaussian_kernel
 from src.derivative_gaussian_kernel import generate_derivative_gaussian_kernel
+from src.convolution import convolve_image_with_kernel
 
-# Generate a 3 x 3 derivative of Gaussian kernel with sigma of 1
-size = 3
-sigma = 1
-kernel_x, kernel_y = generate_derivative_gaussian_kernel(size, sigma)
+golfer_image = "../data/images/golfer_grayscale.jpg"
+bear_image = "../data/images/bear_grayscale.jpg"
+lions_image = "../data/images/lions_grayscale.jpg"
 
-# Print the x_kernel
-print("Derivative of Gaussian Kernel (X-direction):")
-for row in kernel_x:
-    print(row)
+# Create Gaussian kernel (3X3 with sigma of 1)
+G = create_gaussian_kernel(3, 1)
 
-# Print the y_kernel
-print("Derivative of Gaussian Kernel (Y-direction):")
-for row in kernel_y:
-    print(row)
-
+# Perform convolution with gaussian kernel
