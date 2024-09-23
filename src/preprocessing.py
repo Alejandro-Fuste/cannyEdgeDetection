@@ -19,4 +19,15 @@ gaussian_kernel = create_gaussian_kernel(3, 1.5)
 # Perform convolution with gaussian kernel
 filtered_image = convolve_image_with_kernel(golfer_np_array, gaussian_kernel)
 
-display_matrix(filtered_image)
+# Generate Gaussian derivative
+x_derivative, y_derivative = generate_derivative_gaussian_kernel(3, 1.5)
+
+# Perform convolution with gaussian derivatives
+x_derivative_image = convolve_image_with_kernel(filtered_image, x_derivative)
+y_derivative_image = convolve_image_with_kernel(filtered_image, y_derivative)
+
+# Compute magnitude
+
+
+display_matrix(x_derivative_image)
+display_matrix(y_derivative_image)
