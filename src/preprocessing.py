@@ -1,10 +1,17 @@
-from src.gaussian_function import gaussian_function
-from src.gaussian_kernel import create_gaussian_kernel
+from src.derivative_gaussian_kernel import generate_derivative_gaussian_kernel
 
+# Generate a 3 x 3 derivative of Gaussian kernel with sigma of 1
 size = 3
 sigma = 1
-gaussian_kernel = create_gaussian_kernel(size, sigma)
+kernel_x, kernel_y = generate_derivative_gaussian_kernel(size, sigma)
 
-# Print the kernel
-for row in gaussian_kernel:
+# Print the x_kernel
+print("Derivative of Gaussian Kernel (X-direction):")
+for row in kernel_x:
     print(row)
+
+# Print the y_kernel
+print("Derivative of Gaussian Kernel (Y-direction):")
+for row in kernel_y:
+    print(row)
+
