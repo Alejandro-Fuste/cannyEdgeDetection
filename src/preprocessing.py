@@ -3,7 +3,8 @@ from src.gaussian_kernel import create_gaussian_kernel
 from src.derivative_gaussian_kernel import generate_derivative_gaussian_kernel
 from src.convolution import convolve_image_with_kernel
 from src.magnitude import compute_gradient_magnitude
-from src.gradient_orientation import compute_gradient_orientation, visualize_orientation
+from src.gradient_orientation import compute_gradient_orientation
+from src.non_maximum_suppresion import non_maximum_suppression
 from src.utils.plot_results import display_matrix
 import cv2
 import numpy as np
@@ -36,12 +37,14 @@ magnitude = compute_gradient_magnitude(x_derivative_image, y_derivative_image, 1
 # Compute gradient orientation
 orientation = compute_gradient_orientation(x_derivative_image, y_derivative_image)
 
-
+# Calculate the non-maximum suppression
+nms = non_maximum_suppression(magnitude, orientation)
 
 # display_matrix(filtered_image)
 # display_matrix(x_derivative_image)
 # display_matrix(y_derivative_image)
 # display_matrix(magnitude)
+display_matrix(nms)
 
 
 
