@@ -4,7 +4,7 @@ import numpy as np
 # Performs Non-Maximum Suppression on the gradient magnitude and direction.
 
 def non_maximum_suppression(magnitude, direction):
-    
+
     # Initialize the output array with zeros
     rows = magnitude.shape[0]
     cols = magnitude.shape[1]
