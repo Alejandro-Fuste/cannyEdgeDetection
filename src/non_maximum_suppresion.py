@@ -10,4 +10,10 @@ def non_maximum_suppression(magnitude, direction):
 
     # Convert directions to range [0, 180)
     direction = direction % 180
-    
+
+    # Loop through every pixel in the gradient magnitude image
+    for i in range(1, rows - 1):
+        for j in range(1, cols - 1):
+            # Get the magnitude and direction at the current pixel
+            current_mag = magnitude[i, j]
+            current_dir = direction[i, j]
