@@ -8,5 +8,14 @@ high_threshold = 100
 weak_pixel = 75
 strong_pixel = 255
 
+
 def hysteresis_thresholding(gradient_magnitude):
-    pass
+    # Create an empty array for the result
+
+    # Mark the strong pixels
+
+    # Mark the weak pixels
+
+    # Remove weak pixels unless connected to strong pixels
+
+    # return result
