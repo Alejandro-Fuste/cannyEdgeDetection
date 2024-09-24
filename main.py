@@ -1,8 +1,12 @@
-from src.utils.read_grayscale_image import read_grayscale_image
+from src.canny_algorithm import canny_edge_detector
 
-image_path = "data/images/golfer_grayscale.jpg"
+golfer_image = "data/images/golfer_grayscale.jpg"
+bear_image = "./data/images/bear_grayscale.jpg"
+lions_image = "./data/images/lions_grayscale.jpg"
 
-I = read_grayscale_image(image_path)
+# canny_edge_detector(golfer_image, 3, 1)
+# canny_edge_detector(bear_image, 3, 3)
+canny_edge_detector(lions_image, 3, .5)
 
-print(I)
+
 
