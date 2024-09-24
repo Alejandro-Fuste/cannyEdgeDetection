@@ -5,6 +5,7 @@ from src.convolution import convolve_image_with_kernel
 from src.magnitude import compute_gradient_magnitude
 from src.gradient_orientation import compute_gradient_orientation
 from src.non_maximum_suppresion import non_maximum_suppression
+from src.hystersis_thresholding import hysteresis_thresholding
 from src.utils.plot_results import display_matrix
 import cv2
 import numpy as np
@@ -40,11 +41,15 @@ orientation = compute_gradient_orientation(x_derivative_image, y_derivative_imag
 # Calculate the non-maximum suppression
 nms = non_maximum_suppression(magnitude, orientation)
 
+# Perform Hystersis Threshold
+threshold = hysteresis_thresholding(magnitude)
+
 # display_matrix(filtered_image)
 # display_matrix(x_derivative_image)
 # display_matrix(y_derivative_image)
 # display_matrix(magnitude)
-display_matrix(nms)
+# display_matrix(nms)
+display_matrix(threshold)
 
 
 

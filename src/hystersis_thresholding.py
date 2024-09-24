@@ -14,13 +14,23 @@ def hysteresis_thresholding(gradient_magnitude):
     result = np.zeros_like(gradient_magnitude, dtype=np.uint8)
 
     # Mark the strong pixels
-    strong_row, strong_col = np.where(gradient_magnitude >= high_threshold)
-    result[strong_row, strong_col] = strong_pixel
+    strong_x, strong_y, strong_z = np.where(gradient_magnitude >= high_threshold)
+    strong_x, strong_y, strong_z = np.where(gradient_magnitude >= high_threshold)
+
 
     # Mark the weak pixels
-    weak_row, weak_col = np.where((gradient_magnitude >= low_threshold) & (gradient_magnitude < high_threshold))
-    result[weak_row, weak_col] = weak_pixel
+    weak_x, weak_y, weak_z = np.where((gradient_magnitude >= low_threshold) & (gradient_magnitude < high_threshold))
+    result[weak_x, weak_y, weak_z] = weak_pixel
 
     # Remove weak pixels unless connected to strong pixels
+    for i in range(1, gradient_magnitude.shape[0] - 1):
+        for j in range(1, gradient_magnitude.shape[1] - 1):
+            for k in range(1, gradient_magnitude.shape[2] - 1):
+                if result[i, j, k] == weak_pixel:
+                    # Check if the weak pixel is connected to a strong pixel in its 26-neighbor region
+                    if (result[i - 1:i + 2, j - 1:j + 2, k - 1:k + 2] == strong_pixel).any():
+                        result[i, j, k] = strong_pixel
+                    else:
+                        result[i, j, k] = 0  # Suppress weak pixel if not connected to strong pixel
 
-    # return result
+    return result
