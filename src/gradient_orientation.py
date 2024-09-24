@@ -17,7 +17,7 @@ def visualize_orientation(orientation):
     normalize_orientation = orientation / 360.0
 
     # Create the color map (hue for angle visualization)
-    plt.imshow(normalize_orientation, cmap='hsv') 
+    plt.imshow(normalize_orientation, cmap='hsv')
     plt.colorbar(label='Orientation (degrees)')
     plt.title('Edge Orientation Visualization')
     plt.show()
